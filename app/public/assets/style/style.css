@@ -1,0 +1,26 @@
+header {
+    margin-bottom: 25px;
+}
+footer, .push {
+    height: 50px;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+#break{
+    border-top: 1px solid;
+    border-top-color: #3879ca;
+    margin: 20px
+}
+
+.jumbotron{
+    padding-top: 0;
+}
+
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}

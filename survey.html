@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+        <meta charset="UTF-8">
+        <title>Friend Finder</title>
+
+        <!--External CSS-->
+        <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+                crossorigin="anonymous">
+
+</head>
+
+<body>
+<div class="wrapper">
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Survey Questions </h1>
+        <div id ="break"></div>
+        <!--Search Parameters Div-->
+        <h2>About You</h2>
+        <p>Name (Required)</p>
+        <input type ="text" id= "name" class ="form-control" required>
+        
+        <!--https://seiyria.com/bootstrap-slider/-->
+        
+        <br>
+        <center><label for="customRange1" >Question 1</label></center>
+        <div class="d-flex justify-content-center my-4">
+                <span class="font-weight-bold indigo-text mr-2 mt-1">Disagree</span>  
+                <form class="range-field w-100">
+                <input type="range" class="custom-range" id ="q1" min="1" max="10" value="5">    
+                </form>
+                <span class="font-weight-bold indigo-text mr-2 mt-1">Agree</span>  
+
+        </div>
+        
+        <br>
+        <center><label for="customRange1" >Question 2</label></center>
+        <div class="d-flex justify-content-center my-4">
+                <span class="font-weight-bold indigo-text mr-2 mt-1">Disagree</span>  
+                <form class="range-field w-100">
+                <input type="range" class="custom-range q2" id ="q2" min="1" max="10" value="5">    
+                </form>
+                <span class="font-weight-bold indigo-text mr-2 mt-1">Agree</span>  
+
+        </div>
+        <br>
+        <center><label for="customRange1">Question 3</label></center>
+        <div class="d-flex justify-content-center my-4">
+                <span class="font-weight-bold indigo-text mr-2 mt-1">Disagree</span>  
+                <form class="range-field w-100">
+                <input type="range" class="custom-range"  id ="q3" min="1" max="10" value="5">    
+                </form>
+                <span class="font-weight-bold indigo-text mr-2 mt-1">Agree</span>  
+
+        </div>
+        <br>
+       <center> <label for="customRange1" >Question 4</label> </center>
+        <div class="d-flex justify-content-center my-4">
+                <span class="font-weight-bold indigo-text mr-2 mt-1">Disagree</span>  
+                <form class="range-field w-100">
+                <input type="range" class="custom-range" id ="q4" min="1" max="10" value="5">    
+                </form>
+                <span class="font-weight-bold indigo-text mr-2 mt-1">Agree</span>  
+
+        </div>
+        <br>
+        <center><label for="customRange1" >Question 5</label></center>
+        <div class="d-flex justify-content-center my-4">
+                <span class="font-weight-bold indigo-text mr-2 mt-1">Disagree</span>  
+                <form class="range-field w-100">
+                <input type="range" class="custom-range" id ="q5" min="1" max="10" value="5">    
+                </form>
+                <span class="font-weight-bold indigo-text mr-2 mt-1">Agree</span>  
+
+        </div>
+
+        <center>
+            <button type ="submit" class ="btn btn-primary submit">Submit</button>
+        </center>
+
+    
+    </div>
+</div>
+
+<div class="push">
+</div>
+
+</div>
+
+<footer class="footer">
+        <div class="container">
+            <a href ="/">Api Friends List</a>
+            <a>|</a>
+            <a href ="/">GitHub Repo</a>
+        </div>
+    </footer>
+
+</body>
+<script type="text/javascript">   
+    
+    
+    $(".submit").on("click",function(event){
+        event.preventDefault();
+                         //console.log("name is : " +$("#name").val())
+                        // console.log("value1 is : " +$(".q1").val())
+                        // console.log("value2 is : " + $(".q2").val())
+                        // console.log("value3 is : " +$(".q3").val())
+                        //  console.log("value4 is : " + $("#q4").val())
+                        // console.log("value5 is : " +$("#q5").val())
+      // validation 
+      
+      function validation(){
+          var isValid = true;
+          $(".form-control").each(function(){
+              if($(this).val()=== "") {
+                  isValid = false
+              }
+          })
+          return isValid;
+      }
+
+//console.log(validation())
+
+//create array user data
+      if(validation()){
+          var user  ={
+              name : $("#name").val(),
+              score: [
+                  $("#q1").val(),
+                  $("#q2").val(),
+                  $("#q3").val(),
+                  $("#q4").val(),
+                  $("#q5").val()
+              ]
+              
+      }
+      //console.log(user)
+      }
+
+
+
+    })
+</script>
+
+
+</html>
+
+
+
